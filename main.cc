@@ -25,7 +25,6 @@
 #include "number.h"
 
 using namespace std;
-using namespace number;
 
 
 void usage()
@@ -113,13 +112,13 @@ int main(int argc, char **argv)
 	}
 
 	if (mode & modes::OUTMODE_HEX)
-		num.add_filter("hex", filter_hex);
+		num.add_filter("hex", number::filter_hex);
 	if (mode & modes::OUTMODE_DEC)
-		num.add_filter("dec", filter_dec);
+		num.add_filter("dec", number::filter_dec);
 	if (mode & modes::OUTMODE_B64)
-		num.add_filter("base64", filter_b64);
+		num.add_filter("base64", number::filter_b64);
 	if (mode & modes::OUTMODE_MPI)
-		num.add_filter("mpi", filter_mpi);
+		num.add_filter("mpi", number::filter_mpi);
 
 	num.run_filter(filter);
 	return 0;
