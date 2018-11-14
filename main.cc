@@ -20,7 +20,11 @@
 
 #include <cstdlib>
 #include <cstdint>
-#include <unistd.h>
+#if defined(_WIN32)
+    #include "getopt.h"
+#else
+    #include <unistd.h>
+#endif
 #include "filters.h"
 #include "number.h"
 
