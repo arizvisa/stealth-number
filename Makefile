@@ -1,10 +1,10 @@
 
-CXX=c++
-LD=c++
-DEFS=
-INC=
-LIBS=
-LDFLAGS=
+CXX?=c++
+LD?=c++
+DEFS?=
+INC?=
+LIBS?=
+LDFLAGS?=
 
 # reported to work with OSX brew
 #INC+=-I/opt/local/include
@@ -23,8 +23,8 @@ LDFLAGS=
 #DEFS+=-DHAVE_LIBRESSL
 
 
-CXXFLAGS=-O2 -pedantic -Wall -std=c++11 $(INC) $(DEFS)
-LIBS+=-lcrypto
+CXXFLAGS=-O2 -pedantic -Wall -std=c++14 $(INC) $(DEFS)
+LIBS?=-lcrypto
 
 all: number
 
